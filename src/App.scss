@@ -1,0 +1,133 @@
+@import url("https://fonts.googleapis.com/css2?family=Marmelad&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Marmelad", sans-serif;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  background-color: #f1f0ed;
+  cursor: default;
+}
+
+.todo {
+  width: 430px;
+  background-color: #fff;
+  box-shadow: 0px 9px 24px rgba(0, 0, 0, 0.01),
+    0px 25px 40px rgba(0, 0, 0, 0.05);
+  border-radius: 6px;
+  border: 1px solid #00b99d;
+  overflow: hidden;
+
+  &_header {
+    background-color: #00b99d;
+    padding: 15px;
+    text-align: center;
+    font-size: 24px;
+    color: #fff;
+  }
+
+  &_add-field {
+    display: flex;
+    border-bottom: 1px solid #eaeaea;
+
+    input {
+      border: 0;
+      font-family: "Marmelad", sans-serif;
+      font-size: 16px;
+      padding: 18px;
+      flex: 1;
+      outline: none;
+
+      &::placeholder {
+        color: #c7c7c7;
+      }
+    }
+
+    &-button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 0;
+      background-color: transparent;
+      width: 57px;
+      height: 57px;
+      margin: 0 3px;
+
+      &:focus-visible {
+        outline: none;
+      }
+
+      svg:hover {
+        cursor: pointer;
+        fill: #6c757d;
+      }
+    }
+  }
+
+  &_list {
+    overflow: auto;
+    max-height: 265px;
+
+    &::-webkit-scrollbar {
+      width: 6px;
+      background-color: #f5f5f5;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      border-radius: 6px;
+      background-color: #c7c7c7;
+    }
+
+    &-item {
+      display: flex;
+      align-items: center;
+      padding: 15px 20px;
+      border-bottom: 1px solid #eaeaea;
+      background-color: #ffffff;
+
+      &:hover {
+        background-color: #f2f2f2;
+      }
+
+      p {
+        flex: 1;
+      }
+
+      &-check {
+        display: flex;
+        padding-right: 12px;
+
+        svg:hover {
+          cursor: pointer;
+          fill: #198754;
+        }
+      }
+
+      &-remove {
+        display: flex;
+
+        svg:hover {
+          cursor: pointer;
+          fill: #dc3545;
+        }
+      }
+    }
+  }
+}
+
+.completed {
+  .todo_list-item-check {
+    svg {
+      fill: #198754;
+    }
+  }
+}
